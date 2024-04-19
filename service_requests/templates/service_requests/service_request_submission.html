@@ -1,0 +1,11 @@
+<!-- service_request_submission.html -->
+{% extends 'service_requests/base.html' %}
+{% block content %}
+    <h1>Submit Service Request</h1>
+    <!-- Form for submitting service request -->
+    <form method="post">
+        {% csrf_token %}
+        <!-- Form fields -->
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
