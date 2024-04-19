@@ -28,13 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'service_requests', 'templates')],
-        # Other configuration options...
-    },
-]
+
 
 
 # Application definition
@@ -46,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
     'service_requests',
 ]
 
@@ -64,7 +59,10 @@ ROOT_URLCONF = 'gas_utility.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'service_requests', 'templates'),
+            os.path.join(BASE_DIR, 'user', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

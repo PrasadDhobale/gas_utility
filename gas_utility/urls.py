@@ -3,5 +3,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("service_requests.urls"))
+    path('',include("user.urls")),
+    path('services/',include("service_requests.urls"))
+
 ]
